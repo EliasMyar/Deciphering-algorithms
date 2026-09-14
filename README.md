@@ -1,8 +1,7 @@
 # XOR / AES Brute-Force Toolkit
 
 A small collection of Python scripts for brute-forcing weak or partially-known
-symmetric encryption keys against a ciphertext file. These were built for
-CTF-style exercises and educational cryptanalysis — testing how quickly a
+symmetric encryption keys against a ciphertext file. These were built for educational cryptanalysis — testing how quickly a
 *weak* key (single repeating byte, short XOR key, or a password from a
 wordlist) can be recovered when the underlying algorithm itself is not the
 weak point, the **key** is.
