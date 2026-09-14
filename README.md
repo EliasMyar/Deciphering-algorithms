@@ -7,21 +7,13 @@ CTF-style exercises and educational cryptanalysis — testing how quickly a
 wordlist) can be recovered when the underlying algorithm itself is not the
 weak point, the **key** is.
 
-> **Use responsibly.** Only run these against files/systems you own or have
-> explicit permission to test. None of this breaks properly-generated AES or
-> XOR keys — it only works because the target key is short, predictable, or
-> guessable.
-
 ## Repository structure
 
 | File | Attack | Algorithm |
 |---|---|---|
-| `xor_bruteforce.py` | Exhaustive key search | XOR, 1-byte and 2-byte repeating keys |
-| `aes_ecb_weak_key_bruteforce.py` | Exhaustive key search over a *weak key pattern* | AES-128 (ECB or CBC) |
-| `aes_known_plaintext_wordlist_attack.py` | Known-plaintext + wordlist | AES-128 (ECB or CBC) |
-
-(Rename the three pasted scripts to match the names above, or update the
-table to match whatever you actually call them in the repo.)
+| `XOR_bruteforce.py` | Exhaustive key search | XOR, 1-byte and 2-byte repeating keys |
+| `AES_bruteforce.py` | Exhaustive key search over a *weak key pattern* | AES-128 (ECB or CBC) |
+| `bruteforce_worldlist.py` | Known-plaintext + wordlist | AES-128 (ECB or CBC) |
 
 ## Requirements
 
@@ -30,8 +22,8 @@ pip install cryptography pycryptodome
 ```
 
 - `xor_bruteforce.py` — standard library only (`os`, `string`).
-- `aes_ecb_weak_key_bruteforce.py` — uses the [`cryptography`](https://cryptography.io/) package.
-- `aes_known_plaintext_wordlist_attack.py` — uses [`pycryptodome`](https://pycryptodome.readthedocs.io/) (`Crypto.Cipher`).
+- `AES_bruteforce.py` — uses the [`cryptography`](https://cryptography.io/) package.
+- `bruteforce_worldlist.py` — uses [`pycryptodome`](https://pycryptodome.readthedocs.io/) (`Crypto.Cipher`).
 
 ---
 
