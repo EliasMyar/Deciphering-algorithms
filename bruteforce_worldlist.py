@@ -1,13 +1,13 @@
 from Crypto.Cipher import AES
 
 # Load your known data
-with open('D:\\UC_library\\Active_Space\\Encrypted\\o_tal_de_560.bin', 'rb') as f:
+with open('PLAIN_TEXT_PATH', 'rb') as f:
     plaintext = f.read()
 
-with open('D:\\UC_library\\Active_Space\\Encrypted\\InternshipVIII_T004.bin', 'rb') as f:
+with open('CIPHER_TEXT_PATH', 'rb') as f:
     ciphertext = f.read()
 
-with open('D:\\UC_library\\Active_Space\\Encrypted\\passwords1.txt') as f:
+with open('passwords1.txt') as f:
     passlist = f.read().splitlines()
 
 # Grab the first 16 bytes (one AES block) to test quickly
@@ -15,8 +15,6 @@ target_block = ciphertext[:32]
 known_plain_block = plaintext[:32]
 
 # Define a wordlist or a logical range of keys to test
-# Example: Testing words from a list or guessing a numerical key
-# possible_passwords = ['amor', 'fogo', 'camões', 'portugal', '123456', 'poema', 'ACTIVESPACE' ,'13032004', 'Fernando', 'Technologies', 'FASS', 'fass'] 
 passlist = [key for key in passlist if len(key) <= 16]
 
 # print(passlist)
