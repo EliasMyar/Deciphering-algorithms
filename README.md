@@ -90,10 +90,10 @@ python xor_bruteforce.py
 
 ---
 
-## 2. `aes_ecb_weak_key_bruteforce.py` — weak AES key search
+## 2. `AES_bruteforce.py` — weak AES key search
 
 Assumes the AES-128 key is a **single byte value repeated 16 times**
-(e.g. `\x2A` × 16) — a common weak-key pattern in beginner CTF challenges —
+(e.g. `\x2A` × 16) — a common weak-key pattern in beginner challenges —
 and brute-forces all 256 possibilities.
 
 ### How it works
@@ -119,7 +119,7 @@ file_path = "path/to/your/encrypted_file.bin"
 Run:
 
 ```bash
-python aes_ecb_weak_key_bruteforce.py
+python AES_bruteforce.py
 ```
 
 ### Notes / limitations
@@ -135,8 +135,7 @@ python aes_ecb_weak_key_bruteforce.py
   single-byte pattern doesn't yield a hit and you suspect a two-byte
   alternating key instead.
 - The script is hardcoded to **AES-ECB**; a commented-out line shows how to
-  switch to **AES-CBC** with an all-zero IV if that's what the challenge
-  uses instead. Note the comment in the ECB branch about the IV being
+  switch to **AES-CBC** with an all-zero IV. Note the comment in the ECB branch about the IV being
   unused is only accurate for the ECB path — if you switch to CBC, the IV
   choice matters and an all-zero IV is only correct if that's what the
   target actually used.
@@ -148,7 +147,7 @@ python aes_ecb_weak_key_bruteforce.py
 
 ---
 
-## 3. `aes_known_plaintext_wordlist_attack.py` — known-plaintext + wordlist attack
+## 3. `bruteforce_worldlist.py` — known-plaintext + wordlist attack
 
 For cases where you already have **both** a known plaintext sample and its
 corresponding ciphertext (a classic known-plaintext attack setup), and you
@@ -189,7 +188,7 @@ with open('passwords1.txt') as f:
 Run:
 
 ```bash
-python aes_known_plaintext_wordlist_attack.py
+python bruteforce_worldlist.py
 ```
 
 ### Notes / limitations
